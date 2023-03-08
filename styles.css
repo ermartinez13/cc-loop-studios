@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-img {
+  background-image: url("images/mobile/image-hero.jpg");
+  background-color: black; /* used as fallback; recommended as best practice by mdn */
+  object-fit: cover;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 80rem;
+  min-width: 20rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.mobile-menu {
+  padding: 1rem 0;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.desktop-nav ul {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.desktop-nav li {
+  padding: 1rem;
+}
+
+.desktop-nav li:first-child {
+  padding-left: 0;
+}
+
+.desktop-nav li:last-child {
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 40rem) {
+  .hero-img {
+    background-image: url("images/desktop/image-hero.jpg");
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
