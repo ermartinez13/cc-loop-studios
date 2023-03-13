@@ -5,6 +5,8 @@
 
 html {
   font-size: 16px;
+  --content-max-width: 65rem;
+  --content-min-width: 20rem;
 }
 
 button {
@@ -33,14 +35,10 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  max-width: 80rem;
-  min-width: 20rem;
+  max-width: var(--content-max-width);
+  min-width: var(--content-min-width);
   margin: 0 auto;
   padding-top: 3rem;
-}
-
-.mobile-menu {
-  padding: 1rem 0;
 }
 
 .desktop-nav {
@@ -70,8 +68,8 @@ header {
   justify-content: center;
   align-items: center;
   width: 90%;
-  max-width: 80rem;
-  min-width: 20rem;
+  max-width: var(--content-max-width);
+  min-width: var(--content-min-width);
   height: 70vh;
   max-height: 33rem;
   margin: 0 auto;
