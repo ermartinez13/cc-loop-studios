@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -43,6 +44,8 @@ header {
 
 .desktop-nav {
   display: none;
+  font-size: 15px;
+  font-family: "Alata", sans-serif;
 }
 
 .desktop-nav ul {
@@ -71,20 +74,28 @@ header {
   max-width: var(--content-max-width);
   min-width: var(--content-min-width);
   height: 70vh;
-  max-height: 33rem;
+  max-height: 32rem;
+  min-height: 16rem;
   margin: 0 auto;
 }
 
 .hero-copy {
+  width: min-content;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 1;
   text-transform: uppercase;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 2px solid white;
 }
 
 @media only screen and (min-width: 40rem) {
   .hero-img {
-    background-image: url("images/desktop/image-hero.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("images/desktop/image-hero.jpg");
+    background-position: center;
   }
 
   .desktop-nav {
@@ -97,5 +108,12 @@ header {
 
   .hero-section {
     justify-content: start;
+  }
+
+  .hero-copy {
+    width: auto;
+    max-width: 37rem;
+    padding: 2rem 2.5rem;
+    font-size: 4rem;
   }
 }
