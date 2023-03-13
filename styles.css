@@ -24,6 +24,18 @@ a {
   color: inherit;
 }
 
+.title {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 15px;
+  font-family: "Alata", sans-serif;
+}
+
 .hero-img {
   background-image: url("images/mobile/image-hero.jpg");
   background-color: black; /* used as fallback; recommended as best practice by mdn */
@@ -44,8 +56,6 @@ header {
 
 .desktop-nav {
   display: none;
-  font-size: 15px;
-  font-family: "Alata", sans-serif;
 }
 
 .desktop-nav ul {
@@ -81,14 +91,43 @@ header {
 
 .hero-copy {
   width: min-content;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
   font-size: 2.5rem;
-  line-height: 1;
-  text-transform: uppercase;
   color: white;
   padding: 1.5rem;
   border: 2px solid white;
+}
+
+.interactive-section {
+  width: 90%;
+  max-width: var(--content-max-width);
+  margin: 5rem auto 0;
+}
+
+.interactive-wrap {
+  width: 100%;
+  display: grid;
+}
+
+.interactive-section img {
+  width: 100%;
+}
+
+.interactive-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  row-gap: 1rem;
+  background-color: white;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.interactive-copy h2 {
+  font-size: 2rem;
+}
+
+.interactive-copy p {
+  color: #787878;
 }
 
 @media only screen and (min-width: 40rem) {
@@ -115,5 +154,29 @@ header {
     max-width: 37rem;
     padding: 2rem 2.5rem;
     font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 51rem) {
+  .interactive-wrap {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .interactive-img {
+    grid-column: 1/5;
+    grid-row: 1/4;
+  }
+
+  .interactive-copy {
+    grid-column: 4 / 7;
+    grid-row: 2 / 4;
+    padding: 0 0 0.25rem max(calc(100% - 27rem), 0rem);
+    text-align: left;
+    row-gap: 2rem;
+  }
+
+  .interactive-copy h2 {
+    font-size: 2.5rem;
   }
 }
