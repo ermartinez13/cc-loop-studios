@@ -31,6 +31,12 @@ a {
   text-transform: uppercase;
 }
 
+.content-wrap {
+  width: 90%;
+  margin: 0 auto;
+  max-width: var(--content-max-width);
+}
+
 .text {
   font-size: 15px;
   font-family: "Alata", sans-serif;
@@ -47,10 +53,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: var(--content-max-width);
   min-width: var(--content-min-width);
-  margin: 0 auto;
   padding-top: 3rem;
 }
 
@@ -80,13 +83,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: var(--content-max-width);
+
   min-width: var(--content-min-width);
   height: 70vh;
   max-height: 32rem;
   min-height: 16rem;
-  margin: 0 auto;
 }
 
 .hero-copy {
@@ -98,9 +99,7 @@ header {
 }
 
 .interactive-section {
-  width: 90%;
-  max-width: var(--content-max-width);
-  margin: 5rem auto 0;
+  margin-top: 5rem;
 }
 
 .interactive-wrap {
@@ -130,6 +129,71 @@ header {
   color: #787878;
 }
 
+.creations-section {
+  margin-top: 3rem;
+}
+
+.creations-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.creations-section h2 {
+  font-size: 2rem;
+}
+
+.creations-grid {
+  display: grid;
+  width: 100%;
+  margin: 2.5rem 0 1.75rem;
+  row-gap: 1.5rem;
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap::after {
+  position: absolute;
+  z-index: 5;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    30%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+}
+
+.creations-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap h3 {
+  position: absolute;
+  z-index: 10;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.creations-btn {
+  border: 2px solid black;
+  padding: 0.5rem 2rem;
+  font-family: "Alata", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.3rem;
+}
+
 @media only screen and (min-width: 40rem) {
   .hero-img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -155,6 +219,12 @@ header {
     padding: 2rem 2.5rem;
     font-size: 4rem;
   }
+
+  .img-wrap h3 {
+    font-size: 2rem;
+    left: 2rem;
+    bottom: 1.25rem;
+  }
 }
 
 @media only screen and (min-width: 51rem) {
@@ -178,5 +248,32 @@ header {
 
   .interactive-copy h2 {
     font-size: 2.5rem;
+  }
+
+  .creations-section {
+    margin-top: 6rem;
+  }
+
+  .creations-wrap {
+    justify-content: space-between;
+  }
+
+  .creations-grid {
+    order: 3;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+  }
+
+  .creations-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .img-wrap::after {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.1) 40%
+    );
   }
 }
