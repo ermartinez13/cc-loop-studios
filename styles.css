@@ -125,7 +125,8 @@ header {
   font-size: 2rem;
 }
 
-.interactive-copy p {
+.interactive-copy p,
+.copyright {
   color: #787878;
 }
 
@@ -192,6 +193,41 @@ header {
   text-transform: uppercase;
   font-size: 15px;
   letter-spacing: 0.3rem;
+}
+
+footer {
+  margin-top: 5rem;
+  background-color: black;
+  padding: 3rem 0;
+}
+
+.footer-wrap {
+  display: grid;
+  color: white;
+  row-gap: 1rem;
+}
+
+.sitemap {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  row-gap: 1.5rem;
+  padding: 1rem 0 2rem;
+}
+
+.social-wrap {
+  display: flex;
+  justify-self: center;
+  column-gap: 1.5rem;
+}
+
+.copyright {
+  justify-self: center;
+}
+
+.logo {
+  width: max-content;
+  justify-self: center;
 }
 
 @media only screen and (min-width: 40rem) {
@@ -275,5 +311,36 @@ header {
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.1) 40%
     );
+  }
+
+  .footer-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .sitemap {
+    flex-direction: row;
+    justify-self: start;
+    column-gap: 2rem;
+  }
+
+  .social-wrap {
+    grid-area: 1 / 2;
+  }
+
+  .social-wrap,
+  .copyright {
+    justify-self: end;
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .logo,
+  .sitemap,
+  .social-wrap,
+  .copyright {
+    padding: 0;
   }
 }
